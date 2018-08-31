@@ -1,0 +1,26 @@
+{
+  "name": "callbag-catch-error",
+  "version": "1.0.0",
+  "description": "Callbag operator that catches errors thrown by pullable and listenable sources",
+  "keywords": [
+    "callbag",
+    "callbags"
+  ],
+  "main": "index.js",
+  "license": "MIT",
+  "homepage": "https://github.com/armanozak/callbag-catch-error#readme",
+  "author": "Levent Arman Ozak <arman@armanozak.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/armanozak/callbag-catch-error.git"
+  },
+  "scripts": {
+    "prepare": "npm test",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "callbag-basics": "^3.0.0",
+    "callbag-throw-error": "^1.0.1",
+    "jest": "^23.5.0"
+  }
+}
