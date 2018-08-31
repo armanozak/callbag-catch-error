@@ -46,7 +46,7 @@ Logs the following:
 
 .
 
-## Example 2: Pullable stream
+## Example 2: Listenable stream
 
 ```js
 const { flatten, forEach, fromPromise, interval, map, pipe, take } = require('callbag-basics');
