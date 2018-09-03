@@ -10,13 +10,22 @@ If you wonder what this is all about, you should definitely check out the awesom
 
 .
 
+## Behavior
+
+- Data from pullable and listenable sources without errors are passed to sinks.
+- Errors thrown by pullable and listenable sources get caught.
+- Pullable sources stop emitting on error as expected.
+- Listenable sources continue emitting after error as expected.
+
+.
+
 ## Example 1: Pullable stream
 
 ```js
 const { flatten, fromIter, fromPromise, map, pipe } = require('callbag-basics');
 const iterate = require('callbag-iterate');
 const fetch = require('isomorphic-unfetch');
-const catchError = require('./');
+const catchError = require('callbag-catch-error');
 
 pipe(
   fromIter([0, 1]),
@@ -28,12 +37,12 @@ pipe(
       }
 
       return resp.json();
-    })
+    }),
   ),
   map(request => fromPromise(request)),
   flatten,
   catchError(err => console.log(err.message)),
-  iterate(data => console.log(data.name))
+  iterate(data => console.log(data.name)),
 );
 
 /*
@@ -64,12 +73,12 @@ pipe(
       }
 
       return resp.json();
-    })
+    }),
   ),
   map(request => fromPromise(request)),
   flatten,
   catchError(err => console.log(err.message)),
-  forEach(data => console.log(data.name))
+  forEach(data => console.log(data.name)),
 );
 
 /*
