@@ -1,6 +1,6 @@
 {
   "name": "callbag-catch-error",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Callbag operator that catches errors thrown by pullable and listenable sources",
   "keywords": [
     "callbag",
